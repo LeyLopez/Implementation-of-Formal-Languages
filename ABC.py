@@ -1,6 +1,6 @@
 from abc import ABC, abstractclassmethod
 
-class Super_Class(ABC):
+class SuperClass(ABC):
 
     @abstractclassmethod
     def union(self):
