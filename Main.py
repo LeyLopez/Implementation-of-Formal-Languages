@@ -6,5 +6,6 @@ def main():
 
     my_alphabet.enter_alphabets()
     my_alphabet.show()
+    my_alphabet.union()
 
 main()

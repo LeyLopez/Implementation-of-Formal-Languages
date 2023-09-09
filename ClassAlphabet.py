@@ -16,7 +16,8 @@ class Alphabet(SuperClass):
     print(f"A: {{{', '.join(self.alphabet1)}}} B: {{{', '.join(self.alphabet2)}}}")   
 
   def union(self):
-    pass
+    alphabets_union = self.alphabet1.union(self.alphabet2)
+    print("The alphabets union is: ", alphabets_union)
 
   def interception(self):
     pass
@@ -27,4 +28,5 @@ class Alphabet(SuperClass):
 my_alphabet = Alphabet()
 my_alphabet.enter_alphabets()
 my_alphabet.show()
+my_alphabet.union()
 
