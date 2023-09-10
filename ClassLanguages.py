@@ -10,17 +10,17 @@ class Languages(SuperClass):
         self.language1 = set()
         self.language2 = set()
         self.alphabet = Alphabet()
-        
+        self.alphabet.enter_alphabets()
 
     def enter_num_words(self):
         num_words_one = int(input("Enter the number of words in Language A: "))
-        num_words_two = int(input("Enter the number of words in Language B: "))
-       
-        
+        num_words_two = int(input("Enter the number of words in Language B: "))    
 
         self.language1 = self.generate_language(num_words_one, self.alphabet.alphabet1)
         self.language2 = self.generate_language(num_words_two, self.alphabet.alphabet2)
 
+        
+        
         print("\nWords for Language A: \n")
         for word in self.language1:
             print(word)
@@ -36,7 +36,7 @@ class Languages(SuperClass):
             language.append(word)
         return language
     
-
+    
     def union(self):
         pass
 
