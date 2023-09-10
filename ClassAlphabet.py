@@ -1,6 +1,8 @@
 from ABC import SuperClass
 import itertools
 import random
+import re
+
 class Alphabet(SuperClass):
 
   def __init__(self):
@@ -8,11 +10,12 @@ class Alphabet(SuperClass):
     self.alphabet2=set()
 
   def enter_alphabets(self):
-    alphabet_one=input("Enter alphabet A: ")
-    alphabet_two= input("alphabet B: ")
+    delimiter = " "
+    alphabets = input("Enter alphabets A and B: ")
+    alphabet_one, alphabet_two = re.split(delimiter, alphabets)
 
-    self.alphabet1 = set(alphabet_one.split(','))
-    self.alphabet2 = set(alphabet_two.split(','))
+    self.alphabet1 = set(alphabet_one.strip("{}").split(","))
+    self.alphabet2 = set(alphabet_two.strip("{}").split(","))
 
   def show(self):
     print(f"A: {{{', '.join(self.alphabet1)}}} B: {{{', '.join(self.alphabet2)}}}")   
