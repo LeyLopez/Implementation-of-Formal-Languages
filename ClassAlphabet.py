@@ -1,4 +1,5 @@
 from ABC import SuperClass
+import itertools
 class Alphabet(SuperClass):
 
   def __init__(self):
@@ -26,12 +27,26 @@ class Alphabet(SuperClass):
   def difference(self):
     alphabet_difference1 = self.alphabet1.difference(self.alphabet2)
     alphabet_difference2 = self.alphabet2.difference(self.alphabet1)
-    print(f"The first alphabets difference (A-B) is: {alphabet_difference1}  and the second alphabets difference(B-A) is: {alphabet_difference2}")    
-    
+    print(f"The first alphabets difference (A-B) is: {alphabet_difference1}  and the second alphabets difference(B-A) is: {alphabet_difference2}")
+
+
+  def star_closure(self):
+    quantity = int(input("Enter the quantity of simbols for calculate the star closure: "))
+    closure = set(itertools.islice(itertools.product(self.alphabet1, self.alphabet2), quantity))
+
+
+    formatted_closure = [f"{elem[0]}{elem[1]}" for elem in closure]
+
+
+    print("Star Closure: {" + ", ".join(formatted_closure) + "}")
+
+
+
 my_alphabet = Alphabet()
 my_alphabet.enter_alphabets()
 my_alphabet.show()
 my_alphabet.union()
 my_alphabet.interception()
 my_alphabet.difference()
+my_alphabet.star_closure()
 
