@@ -1,5 +1,6 @@
 from ABC import SuperClass
 import itertools
+import random
 class Alphabet(SuperClass):
 
   def __init__(self):
@@ -32,11 +33,11 @@ class Alphabet(SuperClass):
 
   def star_closure(self):
     quantity = int(input("Enter the quantity of simbols for calculate the star closure: "))
-    closure = set(itertools.islice(itertools.product(self.alphabet1, self.alphabet2), quantity))
+    closure = list(itertools.islice(itertools.product(self.alphabet1, self.alphabet2), quantity))
 
+    random_closure = random.sample(closure, len(closure))
 
-    formatted_closure = [f"{elem[0]}{elem[1]}" for elem in closure]
-
+    formatted_closure = [f"{elem[0]}{elem[1]}" for elem in random_closure]
 
     print("Star Closure: {" + ", ".join(formatted_closure) + "}")
 
