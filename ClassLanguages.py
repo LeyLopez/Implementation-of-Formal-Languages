@@ -66,7 +66,7 @@ class Languages(SuperClass):
                 word_concatenation = word_one + word_two
                 Languages_concatenation.append(word_concatenation)
 
-                formatted_concatenation = [f"'{word}'" for word in Languages_concatenation]
+                formatted_concatenation = [''.join(word) for word in Languages_concatenation]
 
         print("The concatenation of Language A and Language B is: {" + ", ".join(formatted_concatenation) + "}")
     def exponentiation(self):
