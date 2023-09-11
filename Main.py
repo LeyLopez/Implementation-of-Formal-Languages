@@ -17,6 +17,7 @@ def main():
     my_languages.union()
     my_languages.difference()
     my_languages.intersection()
+    my_languages.concatenation()
 
 
 
