@@ -33,6 +33,8 @@ class Alphabet(SuperClass):
     alphabet_difference2 = self.alphabet2.difference(self.alphabet1)
     print(f"The first alphabets difference (A-B) is: {alphabet_difference1}  and the second alphabets difference(B-A) is: {alphabet_difference2}")
 
+    
+
 
   def star_closure(self):
     quantity = int(input("Enter the quantity of simbols for calculate the star closure: "))
@@ -46,11 +48,7 @@ class Alphabet(SuperClass):
 
 
 
-my_alphabet = Alphabet()
-my_alphabet.enter_alphabets()
-my_alphabet.show()
-my_alphabet.union()
-my_alphabet.interception()
-my_alphabet.difference()
-my_alphabet.star_closure()
+
+
+
 

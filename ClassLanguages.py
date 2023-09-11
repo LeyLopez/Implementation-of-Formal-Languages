@@ -1,40 +1,37 @@
 from ABC import SuperClass
 from ClassAlphabet import Alphabet
 import random
-
+import itertools
 
 
 class Languages(SuperClass): 
 
-    def __init__(self):
-        self.language1 = set()
-        self.language2 = set()
-        self.alphabet = Alphabet()
+    def __init__(self, alphabets):
+        self.language1 = []
+        self.language2 = []
+        self.alphabets = alphabets
+
+
+    def enter_laguages(self):
+        words_languages_one = int(input("Enter the number of words in Language A: "))
+        words_languages_two = int(input("Enter the number of words in Language B: "))
+
+        alphabet1 = self.alphabets.alphabet1
+        alphabet2 = self.alphabets.alphabet2
+
+        self.language1 = list(itertools.islice(itertools.product(alphabet1,alphabet2),words_languages_one)) 
+        self.language2 = list(itertools.islice(itertools.product(alphabet1,alphabet2),words_languages_two))
+
+    def generate_languages(self):
+        self.language1 = random.sample(self.language1, len(self.language1))
+        self.language2 = random.sample(self.language2, len(self.language2))
+
         
+        formatted_language1= [f"{elem[0]}{elem[1]}" for elem in self.language1]
+        formatted_language2= [f"{elem[0]}{elem[1]}" for elem in self.language2]
 
-    def enter_num_words(self):
-        num_words_one = int(input("Enter the number of words in Language A: "))
-        num_words_two = int(input("Enter the number of words in Language B: "))
-       
-        
-
-        self.language1 = self.generate_language(num_words_one, self.alphabet.alphabet1)
-        self.language2 = self.generate_language(num_words_two, self.alphabet.alphabet2)
-
-        print("\nWords for Language A: \n")
-        for word in self.language1:
-            print(word)
-
-        print("\nWords for Language B: \n")
-        for word in self.language2:
-            print(word)
-
-    def generate_language(self, num_words, alphabet):
-        language = []
-        for _ in range(num_words):
-            word = " ".join(random.choice(list(alphabet))for _ in range(random.randint(1, 10)))
-            language.append(word)
-        return language
+        print("Language A: {" + ", ".join(formatted_language1) + "}")
+        print("Language B: {" + ", ".join(formatted_language2) + "}")
     
 
     def union(self):
@@ -47,6 +44,4 @@ class Languages(SuperClass):
         pass
 
 
-my_language = Languages()
-my_language.enter_num_words()  
 
