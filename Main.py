@@ -18,7 +18,7 @@ def main():
     my_languages.difference()
     my_languages.intersection()
     my_languages.concatenation()
-
+    my_languages.exponentiation()
 
 
 main()

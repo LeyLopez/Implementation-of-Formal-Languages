@@ -69,8 +69,15 @@ class Languages(SuperClass):
                 formatted_concatenation = [''.join(word) for word in Languages_concatenation]
 
         print("The concatenation of Language A and Language B is: {" + ", ".join(formatted_concatenation) + "}")
+
+
     def exponentiation(self):
-        pass
+        choose_power = int(input("Enter the number of power: "))
+        random_language = random.choice([self.language1, self.language2])
+        Language_exponentiation = random_language * choose_power
+    
+        print(f"The language was chosen: {random_language} \nRaised to the power: {choose_power} \nResult: {Language_exponentiation}") 
+
 
     def reverse_language(self):
         pass
