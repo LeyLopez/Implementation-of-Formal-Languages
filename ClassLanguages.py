@@ -48,10 +48,15 @@ class Languages(SuperClass):
         formatted_language_union=[f"{elem[0]}{elem[1]}"for elem in Languages_union]
         print("The Languages union (A∪B) is: {" + ", ".join(formatted_language_union) + "}")
 
-    def interception(self):
-        pass
-
     def difference(self):
+       Languages_difference = set(self.language1) - set(self.language2)
+       formatted_language_difference = ["".join(elem) for elem in Languages_difference]
+       print("The difference between Language A and Language B is: {" + ", ".join(formatted_language_difference) + "}")
+
+
+            
+    
+    def interception(self):
         pass
 
     def concatenation(self):

@@ -15,6 +15,7 @@ def main():
     my_languages.generate_language_two()
     my_languages.show_languages()
     my_languages.union()
+    my_languages.difference()
 
 
 
