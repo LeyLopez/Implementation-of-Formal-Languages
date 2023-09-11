@@ -12,17 +12,25 @@ class Languages(SuperClass):
         self.alphabets = alphabets
 
 
-    def generate_laguages(self):
+    def generate_laguages_one(self):
         words_languages_one = int(input("Enter the number of words in Language A: "))
-        words_languages_two = int(input("Enter the number of words in Language B: "))
 
         alphabet1 = self.alphabets.alphabet1
         alphabet2 = self.alphabets.alphabet2
 
         self.language1 = list(itertools.product(alphabet1,alphabet2))
+        
+        self.language1 = random.sample(self.language1, words_languages_one)
+
+        
+    def generate_language_two(self):
+        words_languages_two = int(input("Enter the number of words in Language B: "))
+
+        alphabet1 = self.alphabets.alphabet1
+        alphabet2 = self.alphabets.alphabet2
+
         self.language2 = list(itertools.product(alphabet1,alphabet2))
 
-        self.language1 = random.sample(self.language1, words_languages_one)
         self.language2 = random.sample(self.language2, words_languages_two)
 
 
