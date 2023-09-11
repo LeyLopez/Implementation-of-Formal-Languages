@@ -35,7 +35,8 @@ class Languages(SuperClass):
     
 
     def union(self):
-        pass
+        Languages_union = self.language1.union(self.language2)
+        print("The Languages union (A∪B) is: ", Languages_union)
 
     def interception(self):
         pass
@@ -43,5 +44,16 @@ class Languages(SuperClass):
     def difference(self):
         pass
 
+    def concatenation(self):
+        pass
+
+    def exponentiation(self):
+        pass
+
+    def reverse_language(self):
+        pass
+
+    def cardinality(self):
+        pass
 
 
