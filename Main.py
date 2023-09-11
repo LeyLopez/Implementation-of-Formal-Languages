@@ -11,8 +11,8 @@ def main():
     my_alphabet.interception()
     my_alphabet.star_closure()
 
-    my_languages.enter_laguages()
-    my_languages.generate_languages()
+    my_languages.generate_laguages()
+    my_languages.show_languages()
 
 
 

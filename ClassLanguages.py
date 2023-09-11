@@ -12,7 +12,7 @@ class Languages(SuperClass):
         self.alphabets = alphabets
 
 
-    def enter_laguages(self):
+    def generate_laguages(self):
         words_languages_one = int(input("Enter the number of words in Language A: "))
         words_languages_two = int(input("Enter the number of words in Language B: "))
 
@@ -26,8 +26,7 @@ class Languages(SuperClass):
         self.language2 = random.sample(self.language2, words_languages_two)
 
 
-    def generate_languages(self):
-        
+    def show_languages(self):
         
         formatted_language1= [f"{elem[0]}{elem[1]}" for elem in self.language1]
         formatted_language2= [f"{elem[0]}{elem[1]}" for elem in self.language2]
