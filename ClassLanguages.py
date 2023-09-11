@@ -36,8 +36,9 @@ class Languages(SuperClass):
     
 
     def union(self):
-        Languages_union = self.language1.union(self.language2)
-        print("The Languages union (A∪B) is: ", Languages_union)
+        Languages_union = self.language1 + self.language2
+        formatted_language_union=[f"{elem[0]}{elem[1]}"for elem in Languages_union]
+        print("The Languages union (A∪B) is: {" + ", ".join(formatted_language_union) + "}")
 
     def interception(self):
         pass

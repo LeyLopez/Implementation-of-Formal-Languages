@@ -13,6 +13,7 @@ def main():
 
     my_languages.generate_laguages()
     my_languages.show_languages()
+    my_languages.union()
 
 
 
