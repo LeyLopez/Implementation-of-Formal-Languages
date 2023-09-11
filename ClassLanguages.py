@@ -52,12 +52,12 @@ class Languages(SuperClass):
        Languages_difference = set(self.language1) - set(self.language2)
        formatted_language_difference = ["".join(elem) for elem in Languages_difference]
        print("The difference between Language A and Language B is: {" + ", ".join(formatted_language_difference) + "}")
+                
+    def intersection(self):
+        Languages_intersection = set(self.language1) & set(self.language2)
+        formatted_language_intersection = ["".join(elem) for elem in Languages_intersection]
+        print("The intersection between Language A and Language B is: {" + ", ".join(formatted_language_intersection) + "}")
 
-
-            
-    
-    def interception(self):
-        pass
 
     def concatenation(self):
         pass

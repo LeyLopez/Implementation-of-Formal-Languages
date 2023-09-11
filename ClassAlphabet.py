@@ -24,7 +24,7 @@ class Alphabet(SuperClass):
     alphabets_union = self.alphabet1.union(self.alphabet2)
     print("The alphabets union (A∪B)is: ", alphabets_union)
 
-  def interception(self):
+  def intersection(self):
     alphabets_interception = self.alphabet1.intersection(self.alphabet2)
     print(f"The alphabets interception (A∩B) is : ", alphabets_interception)
   

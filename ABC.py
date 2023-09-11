@@ -8,7 +8,7 @@ class SuperClass(ABC):
         pass
 
     @abstractclassmethod
-    def interception(self):
+    def intersection(self):
         pass
 
     @abstractclassmethod
