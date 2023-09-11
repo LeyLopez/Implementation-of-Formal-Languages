@@ -1,5 +1,6 @@
 from abc import ABC, abstractclassmethod
 
+
 class SuperClass(ABC):
 
     @abstractclassmethod
@@ -13,3 +14,5 @@ class SuperClass(ABC):
     @abstractclassmethod
     def difference(self):
         pass
+
+    
