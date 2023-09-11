@@ -19,13 +19,15 @@ class Languages(SuperClass):
         alphabet1 = self.alphabets.alphabet1
         alphabet2 = self.alphabets.alphabet2
 
-        self.language1 = list(itertools.islice(itertools.product(alphabet1,alphabet2),words_languages_one)) 
-        self.language2 = list(itertools.islice(itertools.product(alphabet1,alphabet2),words_languages_two))
+        self.language1 = list(itertools.product(alphabet1,alphabet2))
+        self.language2 = list(itertools.product(alphabet1,alphabet2))
+
+        self.language1 = random.sample(self.language1, words_languages_one)
+        self.language2 = random.sample(self.language2, words_languages_two)
+
 
     def generate_languages(self):
-        self.language1 = random.sample(self.language1, len(self.language1))
-        self.language2 = random.sample(self.language2, len(self.language2))
-
+        
         
         formatted_language1= [f"{elem[0]}{elem[1]}" for elem in self.language1]
         formatted_language2= [f"{elem[0]}{elem[1]}" for elem in self.language2]

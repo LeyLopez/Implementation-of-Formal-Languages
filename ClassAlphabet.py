@@ -38,9 +38,9 @@ class Alphabet(SuperClass):
 
   def star_closure(self):
     quantity = int(input("Enter the quantity of simbols for calculate the star closure: "))
-    closure = list(itertools.islice(itertools.product(self.alphabet1, self.alphabet2), quantity))
+    closure = list(itertools.product(self.alphabet1, self.alphabet2))
 
-    random_closure = random.sample(closure, len(closure))
+    random_closure = random.sample(closure, quantity)
 
     formatted_closure = [f"{elem[0]}{elem[1]}" for elem in random_closure]
 
