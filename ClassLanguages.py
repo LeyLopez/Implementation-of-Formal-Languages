@@ -90,6 +90,10 @@ class Languages(SuperClass):
 
 
     def cardinality(self):
-        pass
+        random_language = random.choice([self.language1, self.language2])
+        Languages_cardinality = len(random_language)
+    
+        print(f"Language choose: {random_language}")
+        print(f"RESULT: {Languages_cardinality}")
 
 

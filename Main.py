@@ -20,5 +20,6 @@ def main():
     my_languages.concatenation()
     my_languages.exponentiation()
     my_languages.reverse_language()
+    my_languages.cardinality()
 
 main()
