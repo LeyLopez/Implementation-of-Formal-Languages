@@ -10,6 +10,7 @@ class Alphabet(SuperClass):
     self.alphabet2=set()
 
   def enter_alphabets(self):
+    print("The way both alphabets should be typed is: {a,l,b,m} {ñ,l,2,+,@}")
     alphabets = input("Enter alphabets A and B: ")
     return alphabets
 
