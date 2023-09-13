@@ -89,7 +89,6 @@ class Languages(SuperClass):
         random_language = random.choice([self.language1, self.language2])
         reversed_language = ' '.join([''.join(reversed(t)) for t in random_language])
         
-        # Mostrar el lenguaje original y su versión invertida
         original_language_str = ' '.join([''.join(t) for t in random_language])
         print(f"The original language: {original_language_str}")
         print(f"The reversed language: {reversed_language}")
