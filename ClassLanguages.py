@@ -124,7 +124,7 @@ class Languages(SuperClass):
     def show_cardinality(self):
         random_language = self.choise_language_cardinality()
         formatted_random_language = [f"{elem[0]}{elem[1]}"for elem in random_language]
-        print("Language choose: {" + ", ".join(formatted_random_language) + "}")
+        print("Language choose for the cardinality: {" + ", ".join(formatted_random_language) + "}")
         print(f"The cardinality of the randomly chosen language is: {self.cardinality()}")
 
 
