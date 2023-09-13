@@ -7,8 +7,8 @@ import itertools
 class Languages(SuperClass): 
 
     def __init__(self, alphabets):
-        self.language1 = []
-        self.language2 = []
+        self.language1 = set()
+        self.language2 = set()
         self.alphabets = alphabets
 
 
@@ -18,9 +18,10 @@ class Languages(SuperClass):
         alphabet1 = self.alphabets.alphabet1
         alphabet2 = self.alphabets.alphabet2
 
-        self.language1 = list(itertools.product(alphabet1,alphabet2))
+        self.language1 = set(itertools.product(alphabet1,alphabet2))
+        language_one_list=list(self.language1)
         
-        self.language1 = random.sample(self.language1, words_languages_one)
+        self.language1 = random.sample(language_one_list, words_languages_one)
 
         
     def generate_language_two(self):
@@ -30,8 +31,9 @@ class Languages(SuperClass):
         alphabet2 = self.alphabets.alphabet2
 
         self.language2 = list(itertools.product(alphabet1,alphabet2))
+        language_two_list= list(self.language2)
 
-        self.language2 = random.sample(self.language2, words_languages_two)
+        self.language2 = random.sample(language_two_list, words_languages_two)
 
 
     def show_languages(self):
@@ -44,17 +46,18 @@ class Languages(SuperClass):
     
 
     def union(self):
-        Languages_union = self.language1 + self.language2
-        formatted_language_union=[f"{elem[0]}{elem[1]}"for elem in Languages_union]
+        Languages_union = self.language1.union(self.language2)
+        language_union_list = list(Languages_union)
+        formatted_language_union=[f"{elem[0]}{elem[1]}"for elem in language_union_list]
         print("The Languages union (A∪B) is: {" + ", ".join(formatted_language_union) + "}")
 
     def difference(self):
-       Languages_difference = set(self.language1) - set(self.language2)
+       Languages_difference = self.language1.difference(self.language2)
        formatted_language_difference = ["".join(elem) for elem in Languages_difference]
        print("The difference between Language A and Language B is: {" + ", ".join(formatted_language_difference) + "}")
                 
     def intersection(self):
-        Languages_intersection = set(self.language1) & set(self.language2)
+        Languages_intersection = self.language1.intersection(self.language2)
         formatted_language_intersection = ["".join(elem) for elem in Languages_intersection]
         print("The intersection between Language A and Language B is: {" + ", ".join(formatted_language_intersection) + "}")
 

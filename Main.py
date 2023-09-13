@@ -9,6 +9,7 @@ def main():
     my_alphabet.show()
     my_alphabet.union()
     my_alphabet.intersection()
+    my_alphabet.difference()
     my_alphabet.star_closure()
 
     my_languages.generate_laguages_one()
