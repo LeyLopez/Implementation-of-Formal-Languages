@@ -68,10 +68,10 @@ class Languages(SuperClass):
         return Languages_difference2
 
     def show_difference(self):
-        language_difference1_list = list(self.difference_one())
-        language_difference2_list = list(self.difference_two())
-        formatted_language_difference1 = ["".join(elem) for elem in language_difference1_list]
-        formatted_language_difference2 = ["".join(elem) for elem in language_difference2_list]
+        language_difference1_list = self.difference_one()
+        language_difference2_list = self.difference_two()
+        formatted_language_difference1 = [f"{elem[0]}{elem[1]}"for elem in language_difference1_list]
+        formatted_language_difference2 = [f"{elem[0]}{elem[1]}"for elem in language_difference2_list]
         print(f"The first alphabets difference (A-B) is: {formatted_language_difference1}  and the second alphabets difference(B-A) is: {formatted_language_difference2}")
                 
     def intersection(self):
@@ -80,7 +80,7 @@ class Languages(SuperClass):
     
     def show_intersection(self):
         language_intersection_list = list(self.intersection())
-        formatted_language_intersection = ["".join(elem) for elem in language_intersection_list]
+        formatted_language_intersection = [f"{elem[0]}{elem[1]}"for elem in language_intersection_list]
         print("The intersection between Language A and Language B is: {" + ", ".join(formatted_language_intersection) + "}")
 
 
