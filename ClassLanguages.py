@@ -111,7 +111,7 @@ class Languages(SuperClass):
         print("The reverse of language one is: ", language_one)
 
     def reverse_language_two(self):
-        language_two = list(self.language1)
+        language_two = list(self.language2)
         language_two.reverse()
         print("The reverse of language two is: ", language_two)
 
