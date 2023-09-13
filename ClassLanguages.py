@@ -7,8 +7,8 @@ import itertools
 class Languages(SuperClass): 
 
     def __init__(self, alphabets):
-        self.language_1 = set()
-        self.language_2 = set()
+        self.language1 = set()
+        self.language2 = set()
         self.alphabets = alphabets
 
 
@@ -20,10 +20,10 @@ class Languages(SuperClass):
         alphabet1 = self.alphabets.alphabet1
         alphabet2 = self.alphabets.alphabet2
 
-        self.language_1 = list(itertools.product(alphabet1,alphabet2))
-        language_one_list=list(self.language_1)
+        self.language1 = list(itertools.product(alphabet1,alphabet2))
+        language_one_list=list(self.language1)
         
-        self.language_1 = set(random.sample(language_one_list, self.enter_laguages_one()))
+        self.language1 = set(random.sample(language_one_list, self.enter_laguages_one()))
 
         
     def enter_language_two(self):
@@ -34,16 +34,16 @@ class Languages(SuperClass):
         alphabet1 = self.alphabets.alphabet1
         alphabet2 = self.alphabets.alphabet2
 
-        self.language_2 = set(itertools.product(alphabet1,alphabet2))
-        language_two_list= list(self.language_2)
+        self.language2 = set(itertools.product(alphabet1,alphabet2))
+        language_two_list= list(self.language2)
 
-        self.language_2 = set(random.sample(language_two_list, self.enter_language_two()))
+        self.language2 = set(random.sample(language_two_list, self.enter_language_two()))
 
 
     def show_languages(self):
         
-        formatted_language1= [f"{elem[0]}{elem[1]}" for elem in self.language_1]
-        formatted_language2= [f"{elem[0]}{elem[1]}" for elem in self.language_2]
+        formatted_language1= [f"{elem[0]}{elem[1]}" for elem in self.language1]
+        formatted_language2= [f"{elem[0]}{elem[1]}" for elem in self.language2]
 
         print("Language A: {" + ", ".join(formatted_language1) + "}")
         print("Language B: {" + ", ".join(formatted_language2) + "}")
@@ -51,7 +51,7 @@ class Languages(SuperClass):
 
 
     def union(self):
-        Languages_union = self.language_1.union(self.language_2)
+        Languages_union = self.language1.union(self.language2)
         return Languages_union
 
     def show_union(self):
@@ -60,11 +60,11 @@ class Languages(SuperClass):
         print("The Languages union (A∪B) is: {" + ", ".join(formatted_language_union) + "}")
 
     def difference_one(self):
-       Languages_difference1 = list(self.language_1.difference(self.language_2))
+       Languages_difference1 = list(self.language1.difference(self.language2))
        return Languages_difference1
 
     def difference_two(self):
-        Languages_difference2 = list(self.language_2.difference(self.language_1))
+        Languages_difference2 = list(self.language2.difference(self.language1))
         return Languages_difference2
 
     def show_difference(self):
@@ -75,7 +75,7 @@ class Languages(SuperClass):
         print("The first alphabets difference (A-B) is: {" + ", ".join(formatted_language_difference1) + "}  and the second alphabets difference(B-A) is: {" + ", ".join(formatted_language_difference2 ) + "}")
                 
     def intersection(self):
-        Languages_intersection = self.language_1.intersection(self.language_2)
+        Languages_intersection = self.language1.intersection(self.language2)
         return Languages_intersection
     
     def show_intersection(self):
@@ -86,8 +86,8 @@ class Languages(SuperClass):
 
     def concatenation(self):
         Languages_concatenation = []
-        for word_one in self.language_1:
-            for word_two in self.language_2:
+        for word_one in self.language1:
+            for word_two in self.language2:
                 word_concatenation = word_one + word_two
                 Languages_concatenation.append(word_concatenation)
 
@@ -98,7 +98,7 @@ class Languages(SuperClass):
 
     def power_language(self):
         choose_power = int(input("Enter the number of power: "))
-        random_language = random.choice([self.language_1, self.language_2])
+        random_language = random.choice([self.language1, self.language2])
 
         language_exponentiation = ""
         for i in range(choose_power):
@@ -106,17 +106,17 @@ class Languages(SuperClass):
         print(f"The language was chosen: {random_language} \nRaised to the power: {choose_power} \nResult: {language_exponentiation}")
         
     def reverse_language_one(self):
-        language_one = list(self.language_1)
+        language_one = list(self.language1)
         language_one.reverse()
         print("The reverse of language one is: ", language_one)
 
     def reverse_language_two(self):
-        language_two = list(self.language_2)
+        language_two = list(self.language2)
         language_two.reverse()
         print("The reverse of language two is: ", language_two)
 
     def choise_language_cardinality(self):
-        random_language = random.choice([self.language_1,self.language_2])
+        random_language = random.choice([self.language1,self.language2])
         return random_language
     
     def cardinality(self):
