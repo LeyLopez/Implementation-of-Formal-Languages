@@ -21,7 +21,7 @@ def main():
     my_languages.concatenation()
     my_languages.show_cardinality()
     my_languages.reverse_language()
-    my_languages.exponentiation()
+    my_languages.power_language()
     
     
 
