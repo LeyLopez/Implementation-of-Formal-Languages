@@ -34,7 +34,7 @@ class Languages(SuperClass):
         alphabet1 = self.alphabets.alphabet1
         alphabet2 = self.alphabets.alphabet2
 
-        self.language2 = list(itertools.product(alphabet1,alphabet2))
+        self.language2 = set(itertools.product(alphabet1,alphabet2))
         language_two_list= list(self.language2)
 
         self.language2 = set(random.sample(language_two_list, self.enter_language_two()))
