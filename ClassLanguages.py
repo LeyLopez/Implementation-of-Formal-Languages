@@ -72,7 +72,7 @@ class Languages(SuperClass):
         language_difference2_list = self.difference_two()
         formatted_language_difference1 = [f"{elem[0]}{elem[1]}"for elem in language_difference1_list]
         formatted_language_difference2 = [f"{elem[0]}{elem[1]}"for elem in language_difference2_list]
-        print(f"The first alphabets difference (A-B) is: {formatted_language_difference1}  and the second alphabets difference(B-A) is: {formatted_language_difference2}")
+        print("The first alphabets difference (A-B) is: {" + ", ".join(formatted_language_difference1) + "}  and the second alphabets difference(B-A) is: {" + ", ".join(formatted_language_difference2 ) + "}")
                 
     def intersection(self):
         Languages_intersection = self.language1.intersection(self.language2)
@@ -114,19 +114,17 @@ class Languages(SuperClass):
 
 
     def choise_language_cardinality(self):
-        language_one = list(self.language1)
-        language_two = list(self.language2)
-        random_language = random.choice([language_one, language_two])
+        random_language = random.choice([self.language1,self.language2])
         return random_language
     
     def cardinality(self):
-        Languages_cardinality = len(self.choise_language_cardinality())
-        return Languages_cardinality
+        Language_cardinality = len(self.choise_language_cardinality())
+        return Language_cardinality
     
     def show_cardinality(self):
         random_language = self.choise_language_cardinality()
         formatted_random_language = [f"{elem[0]}{elem[1]}"for elem in random_language]
-        print(f"Language choose: {formatted_random_language}")
-        print(f"RESULT: {self.cardinality}")
+        print("Language choose: {" + ", ".join(formatted_random_language) + "}")
+        print(f"The cardinality of the randomly chosen language is: {self.cardinality()}")
 
 
