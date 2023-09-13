@@ -12,28 +12,32 @@ class Languages(SuperClass):
         self.alphabets = alphabets
 
 
-    def generate_laguages_one(self):
+    def enter_laguages_one(self):
         words_languages_one = int(input("Enter the number of words in Language A: "))
-
+        return words_languages_one
+        
+    def generate_language_one(self):
         alphabet1 = self.alphabets.alphabet1
         alphabet2 = self.alphabets.alphabet2
 
         self.language1 = list(itertools.product(alphabet1,alphabet2))
         language_one_list=list(self.language1)
         
-        self.language1 = set(random.sample(language_one_list, words_languages_one))
+        self.language1 = set(random.sample(language_one_list, self.enter_laguages_one()))
 
         
-    def generate_language_two(self):
+    def enter_language_two(self):
         words_languages_two = int(input("Enter the number of words in Language B: "))
+        return words_languages_two
 
+    def generate_language_two(self):
         alphabet1 = self.alphabets.alphabet1
         alphabet2 = self.alphabets.alphabet2
 
         self.language2 = list(itertools.product(alphabet1,alphabet2))
         language_two_list= list(self.language2)
 
-        self.language2 = set(random.sample(language_two_list, words_languages_two))
+        self.language2 = set(random.sample(language_two_list, self.enter_language_two()))
 
 
     def show_languages(self):
@@ -48,19 +52,34 @@ class Languages(SuperClass):
 
     def union(self):
         Languages_union = self.language1.union(self.language2)
-        language_union_list =list(Languages_union)
+        return Languages_union
+
+    def show_union(self):
+        language_union_list =list(self.union())
         formatted_language_union=[f"{elem[0]}{elem[1]}"for elem in language_union_list]
         print("The Languages union (A∪B) is: {" + ", ".join(formatted_language_union) + "}")
 
-    def difference(self):
-       Languages_difference = list(self.language1.difference(self.language2))
-       language_difference_list = list(Languages_difference)
-       formatted_language_difference = ["".join(elem) for elem in language_difference_list]
-       print("The difference between Language A and Language B is: {" + ", ".join(formatted_language_difference) + "}")
+    def difference_one(self):
+       Languages_difference1 = list(self.language1.difference(self.language2))
+       return Languages_difference1
+
+    def difference_two(self):
+        Languages_difference2 = list(self.language2.difference(self.language1))
+        return Languages_difference2
+
+    def show_difference(self):
+        language_difference1_list = list(self.difference_one())
+        language_difference2_list = list(self.difference_two())
+        formatted_language_difference1 = ["".join(elem) for elem in language_difference1_list]
+        formatted_language_difference2 = ["".join(elem) for elem in language_difference2_list]
+        print(f"The first alphabets difference (A-B) is: {formatted_language_difference1}  and the second alphabets difference(B-A) is: {formatted_language_difference2}")
                 
     def intersection(self):
         Languages_intersection = self.language1.intersection(self.language2)
-        language_intersection_list = list(Languages_intersection)
+        return Languages_intersection
+    
+    def show_intersection(self):
+        language_intersection_list = list(self.intersection())
         formatted_language_intersection = ["".join(elem) for elem in language_intersection_list]
         print("The intersection between Language A and Language B is: {" + ", ".join(formatted_language_intersection) + "}")
 
@@ -94,11 +113,20 @@ class Languages(SuperClass):
         print(f"The reversed language: {reversed_language}")
 
 
-    def cardinality(self):
-        random_language = random.choice([self.language1, self.language2])
-        Languages_cardinality = len(random_language)
+    def choise_language_cardinality(self):
+        language_one = list(self.language1)
+        language_two = list(self.language2)
+        random_language = random.choice([language_one, language_two])
+        return random_language
     
-        print(f"Language choose: {random_language}")
-        print(f"RESULT: {Languages_cardinality}")
+    def cardinality(self):
+        Languages_cardinality = len(self.choise_language_cardinality())
+        return Languages_cardinality
+    
+    def show_cardinality(self):
+        random_language = self.choise_language_cardinality()
+        formatted_random_language = [f"{elem[0]}{elem[1]}"for elem in random_language]
+        print(f"Language choose: {formatted_random_language}")
+        print(f"RESULT: {self.cardinality}")
 
 

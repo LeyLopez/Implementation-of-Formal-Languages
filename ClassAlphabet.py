@@ -10,10 +10,12 @@ class Alphabet(SuperClass):
     self.alphabet2=set()
 
   def enter_alphabets(self):
-    delimiter = " "
     alphabets = input("Enter alphabets A and B: ")
-    alphabet_one, alphabet_two = re.split(delimiter, alphabets)
+    return alphabets
 
+  def generate_alphabets(self):
+    delimiter = " "
+    alphabet_one, alphabet_two = re.split(delimiter, self.enter_alphabets())
     self.alphabet1 = set(alphabet_one.strip("{}").split(","))
     self.alphabet2 = set(alphabet_two.strip("{}").split(","))
 
@@ -22,28 +24,45 @@ class Alphabet(SuperClass):
 
   def union(self):
     alphabets_union = self.alphabet1.union(self.alphabet2)
-    print("The alphabets union (A∪B)is: ", alphabets_union)
+    return alphabets_union
+  
+  def show_union(self):
+    print("The alphabets union (A∪B)is: ", self.union())
 
   def intersection(self):
     alphabets_interception = self.alphabet1.intersection(self.alphabet2)
-    print(f"The alphabets interception (A∩B) is : ", alphabets_interception)
+    return alphabets_interception
   
-  def difference(self):
+  def show_intersection(self):
+    print(f"The alphabets interception (A∩B) is : ", self.intersection())
+  
+  def difference_one(self):
     alphabet_difference1 = self.alphabet1.difference(self.alphabet2)
-    alphabet_difference2 = self.alphabet2.difference(self.alphabet1)
-    print(f"The first alphabets difference (A-B) is: {alphabet_difference1}  and the second alphabets difference(B-A) is: {alphabet_difference2}")
-
+    return alphabet_difference1
     
 
+  def difference_two(self):
+    alphabet_difference2 = self.alphabet2.difference(self.alphabet1)
+    return alphabet_difference2
 
-  def star_closure(self):
+  def show_difference(self):
+    print(f"The first alphabets difference (A-B) is: {self.difference_one()}  and the second alphabets difference(B-A) is: {self.difference_two()}")
+
+
+  def enter_simbols_closure(self):
     quantity = int(input("Enter the quantity of simbols for calculate the star closure: "))
+    return quantity
+  
+  def closure(self):
     closure = list(itertools.product(self.alphabet1, self.alphabet2))
-
-    random_closure = random.sample(closure, quantity)
-
-    formatted_closure = [f"{elem[0]}{elem[1]}" for elem in random_closure]
-
+    return closure
+  
+  def generate_closure(self):
+    random_closure = random.sample(self.closure(), self.enter_simbols_closure())
+    return random_closure
+  
+  def show_star_closure(self):
+    formatted_closure = [f"{elem[0]}{elem[1]}" for elem in self.generate_closure()]
     print("Star Closure: {" + ", ".join(formatted_closure) + "}")
 
 
