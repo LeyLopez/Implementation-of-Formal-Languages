@@ -96,22 +96,24 @@ class Languages(SuperClass):
         print("The concatenation of Language A and Language B is: {" + ", ".join(formatted_concatenation) + "}")
 
 
-    def exponentiation(self):
+    def power_language(self):
         choose_power = int(input("Enter the number of power: "))
         random_language = random.choice([self.language1, self.language2])
-        Language_exponentiation = random_language * choose_power
-    
-        print(f"The language was chosen: {random_language} \nRaised to the power: {choose_power} \nResult: {Language_exponentiation}") 
 
-
-    def reverse_language(self):
-        random_language = random.choice([self.language1, self.language2])
-        reversed_language = ' '.join([''.join(reversed(t)) for t in random_language])
+        language_exponentiation = ""
+        for i in range(choose_power):
+            language_exponentiation += str(random_language)
+        print(f"The language was chosen: {random_language} \nRaised to the power: {choose_power} \nResult: {language_exponentiation}")
         
-        original_language_str = ' '.join([''.join(t) for t in random_language])
-        print(f"The original language: {original_language_str}")
-        print(f"The reversed language: {reversed_language}")
+    def reverse_language_one(self):
+        language_one = list(self.language1)
+        language_one.reverse()
+        print("The reverse of language one is: ", language_one)
 
+    def reverse_language_two(self):
+        language_two = list(self.language1)
+        language_two.reverse()
+        print("The reverse of language two is: ", language_two)
 
     def choise_language_cardinality(self):
         random_language = random.choice([self.language1,self.language2])
